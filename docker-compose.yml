@@ -7,10 +7,6 @@ wordpress:
     ports:
      - "80:80"
 mariadb:
-    image: mariadb
-    environment:
-      MYSQL_ROOT_PASSWORD: "rootpassword"
-      MYSQL_DATABASE: "wordpress"
-      MYSQL_USER: "user"
-      MYSQL_PASSWORD: "password"
+    image: my-mariadb
+
 

@@ -10,6 +10,7 @@ pipeline{
             }
             steps{
              sh ("docker build -t ${params.NAME} .")
+             sh ("docker build -t my-mariadb -f DockerfileMaria .")
             }
         }
     }
