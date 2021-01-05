@@ -14,5 +14,4 @@ mariadb:
       MYSQL_DATABASE: "wordpress"
       MYSQL_USER: "user"
       MYSQL_PASSWORD: "password"
-    volumes:
-     - ./database:/var/lib/mysql
+

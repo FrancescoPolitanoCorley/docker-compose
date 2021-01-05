@@ -9,7 +9,7 @@ pipeline{
                 label 'master'  
             }
             steps{
-             sh ("sudo docker build -t ${params.NAME} .")
+             sh ("docker build -t ${params.NAME} .")
             }
         }
         stage ("deploy"){
