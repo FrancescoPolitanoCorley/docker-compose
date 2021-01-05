@@ -8,5 +8,6 @@ wordpress:
      - "80:80"
 mariadb:
     image: my-mariadb
-
+    ports:
+     - "3306:3306"
 
