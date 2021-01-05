@@ -9,7 +9,6 @@ wordpress:
 mariadb:
     image: mariadb
     environment:
-    environment:
       MYSQL_ROOT_PASSWORD: "rootpassword"
       MYSQL_DATABASE: "wordpress"
       MYSQL_USER: "user"
