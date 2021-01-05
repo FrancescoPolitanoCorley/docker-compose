@@ -9,7 +9,9 @@ pipeline{
                 label 'master'  
             }
             steps{
-             sh ("docker build -t ${params.NAME} .")
+                script{
+                    build job: 'wordpress-build', parameters: [[$class: 'StringParameterValue', name: 'NAME', value: 'wordpress-image']]
+                }
             }
         }
         stage ("deploy"){
@@ -17,11 +19,10 @@ pipeline{
                 label 'master'  
             }
             steps{
-             sh("docker-compose up -d")
+                script{
+                    build job: 'wordpress-deploy', parameters: [[$class: 'StringParameterValue', name: 'NAME', value: 'wordpress-image']]
+                }
             }
         }
     }
-}
-int returnZero(){
-    return 0
 }
