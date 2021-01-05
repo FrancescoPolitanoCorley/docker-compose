@@ -17,7 +17,7 @@ pipeline{
                 label 'master'  
             }
             steps{
-             sh("docker-compose up -d")
+             step([$class: 'DockerComposeBuilder', dockerComposeFile: 'docker-compose.yml', option: [$class: 'StartAllServices'], useCustomDockerComposeFile: false])
             }
         }
     }
