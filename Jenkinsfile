@@ -1,6 +1,6 @@
 pipeline{
     parameters {
-        string(name: 'NAME', defaultValue: 'my_docker_image')
+        string(name: 'NAME', defaultValue: 'wordpress-image')
     }
     agent none
     stages{
@@ -17,7 +17,7 @@ pipeline{
                 label 'master'  
             }
             steps{
-             sh("docker-compose up -d)")
+             sh("docker-compose up -d")
             }
         }
     }
