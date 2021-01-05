@@ -8,9 +8,13 @@ pipeline{
             agent { 
                 label 'master'  
             }
+            environment { 
+                MY_SECRET_ROOT = credentials('rootpassword') 
+                MY_SECRET = credentials('mariadb') 
+            }
             steps{
              sh ("docker build -t ${params.NAME} .")
-             sh ("docker build -t my-mariadb -f DockerfileMaria .")
+             sh ("docker build -t mariadb -f -e MYSQL_ROOT_PASSWORD=$MY_SECRET_ROOT MYSQL_USER=$MY_SECRET_USR MYSQL_PASSWORD=$MY_SECRET_PSW .")
             }
         }
     }
