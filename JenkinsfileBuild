@@ -14,7 +14,7 @@ pipeline{
             }
             steps{
              sh ("docker build -t ${params.NAME} .")
-             sh ("docker build -t mariadb -f -e MYSQL_ROOT_PASSWORD=$MY_SECRET_ROOT -e MYSQL_USER=$MY_SECRET_USR -e MYSQL_PASSWORD=$MY_SECRET_PSW .")
+             sh ("docker build -t my-mariadb -f DockerfileMaria --build-arg MYSQL_ROOT_PASSWORD=$MY_SECRET_ROOT --build-arg MYSQL_USER=$MY_SECRET_USR --build-arg MYSQL_PASSWORD=$MY_SECRET_PSW .")
             }
         }
     }
